@@ -1,28 +1,31 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
-	pointsName: "points",
+	name: "RTXT25.Github.io",
+	id: "RTXT25.Github.io",
+	author: "RTXT25",
+	pointsName: "points cuz funny",
 	modFiles: ["layers.js", "tree.js"],
 
-	discordName: "",
-	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	discordName: "i dont have one",
+	discordLink: "lol",
+	initialStartPoints: new Decimal (69), // Used for hard resets and new players
+	offlineLimit: 0,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "2.0",
+	name: "Website Revamped",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+		<br>
+	<h3>Website Revamped: Revamp Push 1 v2.0</h3><br>
+		- This one.<br>
+		<br>
+	<h3>Old Website v1.0</h3><br>
+		- The old one.`
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+let winText = ` `
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -34,7 +37,7 @@ function getStartPoints(){
 
 // Determines if it should show points/sec
 function canGenPoints(){
-	return true
+	return false
 }
 
 // Calculate points/sec!
@@ -56,7 +59,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	return player.points.gte(new Decimal("0"))
 }
 
 

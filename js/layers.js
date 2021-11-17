@@ -1,28 +1,96 @@
-addLayer("p", {
-    name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "P", // This appears on the layer's node. Default is the id with the first letter capitalized
-    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
-    startData() { return {
+addLayer("h", {
+    name: "homepage",
+    startData() {return {
         unlocked: true,
-		points: new Decimal(0),
+		points: new Decimal(0)
     }},
-    color: "#4BDC13",
-    requires: new Decimal(10), // Can be a function that takes requirement increases into account
-    resource: "prestige points", // Name of prestige currency
-    baseResource: "points", // Name of resource prestige is based on
-    baseAmount() {return player.points}, // Get the current amount of baseResource
-    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.5, // Prestige currency exponent
-    gainMult() { // Calculate the multiplier for main currency from bonuses
-        mult = new Decimal(1)
-        return mult
+    color: "#234567",
+    row: 0,
+    symbol: "🏠",
+    position: 0,
+    branches: ["p"],
+    tooltip: "Go Back To The Home Page",
+    clickables: {
+        11: {
+            title: "Go Home",
+            canClick() {return true},
+            onClick() {
+                window.location.href = "https://RTXT25.github.io"
+            },
+            tooltip: "Go Back To Home Page"
+        }
     },
-    gainExp() { // Calculate the exponent on main currency from bonuses
-        return new Decimal(1)
+    tabFormat: [
+        ["clickable", 11]
+    ]
+})
+addLayer("sii", {
+    name: "Stuff I In",
+    startData() {return {
+        unlocked: true,
+		points: new Decimal(0)
+    }},
+    color: "#234567",
+    row: 0,
+    symbol: "🖥️",
+    position: 0,
+    branches: ["p"],
+    tooltip: "The Stuff I Am In",
+    clickables: {
+        11: {
+            title: "The Bored Tree",
+            canClick() {return true},
+            onClick() {
+                window.location.href = "https://rtxt25.github.io/the-bored-tree"
+            }
+        },
+        12: {
+            title: "Project Orion",
+            canClick() {return true},
+            onClick() {
+                window.location.href = "https://rtxt25.github.io/project-orion/"
+            }
+        },
+        13: {
+            title: "",
+            canClick() {return true},
+            onClick() {
+                window.location.href = "https://RTXT25.github.io"
+            }
+        },
+        14: {
+            title: "",
+            canClick() {return true},
+            onClick() {
+                window.location.href = "https://RTXT25.github.io"
+            }
+        },
+        69: {
+            title: "Menace Client",
+            canClick() {return true},
+            onClick() {
+                window.location.href = "https://github.com/MenaceClient"
+            }
+        },
     },
-    row: 0, // Row the layer is in on the tree (0 is the first row)
-    hotkeys: [
-        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
-    ],
-    layerShown(){return true}
+        
+    tabFormat: {
+        "All The Things": {
+            content: [
+
+            ],
+        },
+        "Games": {
+            content: [
+                ["clickable", 11],
+                ["clickable", 12],
+            ],
+        },
+        "Other Stuff": {
+            content: [
+                ["clickable", 69],
+            ],
+        },
+
+    }
 })
