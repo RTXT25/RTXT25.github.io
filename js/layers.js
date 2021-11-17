@@ -31,7 +31,7 @@ addLayer("sii", {
         unlocked: true,
 		points: new Decimal(0)
     }},
-    color: "#ffffff",
+    color: "#d47800",
     row: 0,
     symbol: "🖥️",
     position: 0,
@@ -73,11 +73,22 @@ addLayer("sii", {
                 window.location.href = "https://github.com/MenaceClient"
             }
         },
+        68: {
+            title: "Click Here", // meance Client
+            canClick() {return true},
+            onClick() {
+                window.location.href = "https://rtxt25.github.io/RTreeXTree/"
+            }
+        },
     },
     infoboxes:{
         Main: {
             title: "Stuff",
             body() { return "<h1>These Are My Projects And Stuff That I Have Done And Stuff</h1>" },
+        },
+        MTT: {
+            title: "<h3>My Modding Tree Trees</h3>",
+            body() { return "clicky clicky" },
         },
         TBT: {
             title: "<h3>The Bored Tree</h3>",
@@ -94,12 +105,13 @@ addLayer("sii", {
         M: {
             title: "Menace CLient",
             body() { return "A Minecraft Client That I Am Part Of" },
-        },
+        }
     },
     tabFormat: {
         "Main Thing": {
             content: [
                 ["infobox", "Main"],
+                ["row", [["clickable", 68],["infobox","MTT"]],],
             ],
         },
         "Games": {
@@ -111,7 +123,7 @@ addLayer("sii", {
         },
         "Other Stuff": {
             content: [
-                ["row", [["clickable", 69],["infobox","M"]],],
+                ["row", [["clickable", 68],["infobox","M"]],],
             ],
         },
 
@@ -123,7 +135,7 @@ addLayer("i", {
         unlocked: true,
 		points: new Decimal(0)
     }},
-    color: "#ffffff",
+    color: "#0902db",
     row: 0,
     symbol: "ℹ️",
     position: 0,
