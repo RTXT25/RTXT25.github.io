@@ -18,6 +18,9 @@ let VERSION = {
 }
 
 let changelog = `<h1>Changelog:</h1><br><br>
+		<h3>Website Revamped: Revamp Push 3 v2.2</h3><br>
+		- Added Even More Stuff.<br>
+		<br>
 		<h3>Website Revamped: Revamp Push 2 v2.1</h3><br>
 		- Added More Stuff.<br>
 		<br>
