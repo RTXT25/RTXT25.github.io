@@ -4,7 +4,7 @@ addLayer("h", {
         unlocked: true,
 		points: new Decimal(0)
     }},
-    color: "#234567",
+    color: "#ffffff",
     row: 0,
     symbol: "🏠",
     position: 0,
@@ -30,7 +30,7 @@ addLayer("sii", {
         unlocked: true,
 		points: new Decimal(0)
     }},
-    color: "#234567",
+    color: "#ffffff",
     row: 0,
     symbol: "🖥️",
     position: 0,
@@ -77,7 +77,7 @@ addLayer("sii", {
     tabFormat: {
         "All The Things": {
             content: [
-
+                "clickables",
             ],
         },
         "Games": {
