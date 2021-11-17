@@ -123,7 +123,7 @@ addLayer("sii", {
         },
         "Other Stuff": {
             content: [
-                ["row", [["clickable", 68],["infobox","M"]],],
+                ["row", [["clickable", 69],["infobox","M"]],],
             ],
         },
 
