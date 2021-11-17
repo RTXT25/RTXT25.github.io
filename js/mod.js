@@ -5,7 +5,7 @@ let modInfo = {
 	pointsName: "points cuz funny",
 	modFiles: ["layers.js", "tree.js"],
 
-	discordName: "i dont have one",
+	discordName: "i dont have Discord server",
 	discordLink: "lol",
 	initialStartPoints: new Decimal (69), // Used for hard resets and new players
 	offlineLimit: 0,  // In hours
@@ -13,17 +13,21 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "2.0",
+	num: "2.1",
 	name: "Website Revamped",
 }
 
-let changelog = `<h1>Changelog:</h1><br>
+let changelog = `<h1>Changelog:</h1><br><br>
+		<h3>Website Revamped: Revamp Push 2 v2.1</h3><br>
+		- Added More Stuff.<br>
 		<br>
 	<h3>Website Revamped: Revamp Push 1 v2.0</h3><br>
-		- This one.<br>
+		- Made The Thing.<br>
 		<br>
 	<h3>Old Website v1.0</h3><br>
-		- The old one.`
+		- The old one.<br>
+		<br>
+		Why Does A Website Need A Change Log`
 
 let winText = ` `
 
