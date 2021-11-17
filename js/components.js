@@ -213,14 +213,12 @@ function loadVue() {
 		<span v-if="(tmp[layer].milestones[data].toggles)&&(hasMilestone(layer, data))" v-for="toggle in tmp[layer].milestones[data].toggles"><toggle :layer= "layer" :data= "toggle" v-bind:style="tmp[layer].componentStyles.toggle"></toggle>&nbsp;</span></td></tr>
 		`
 	})
-
 	Vue.component('toggle', {
 		props: ['layer', 'data'],
 		template: `
 		<button class="smallUpg can" v-bind:style="{'background-color': tmp[data[0]].color}" v-on:click="toggleAuto(data)">{{player[data[0]][data[1]]?"ON":"OFF"}}</button>
 		`
 	})
-
 	Vue.component('prestige-button', {
 		props: ['layer', 'data'],
 		template: `
@@ -231,7 +229,6 @@ function loadVue() {
 		`
 	
 	})
-
 	// Displays the main resource for the layer
 	Vue.component('main-display', {
 		props: ['layer', 'data'],
@@ -239,7 +236,6 @@ function loadVue() {
 		<div><span v-if="player[layer].points.lt('1e1000')">You have </span><h2 v-bind:style="{'color': tmp[layer].color, 'text-shadow': '0px 0px 10px ' + tmp[layer].color}">{{data ? format(player[layer].points, data) : formatWhole(player[layer].points)}}</h2> {{tmp[layer].resource}}<span v-if="layers[layer].effectDescription">, <span v-html="run(layers[layer].effectDescription, layers[layer])"></span></span><br><br></div>
 		`
 	})
-
 	// Displays the base resource for the layer, as well as the best and total values for the layer's currency, if tracked
 	Vue.component('resource-display', {
 		props: ['layer'],
@@ -253,7 +249,6 @@ function loadVue() {
 		</div>
 		`
 	})
-
 	Vue.component('buyables', {
 		props: ['layer', 'data'],
 		template: `
@@ -268,7 +263,6 @@ function loadVue() {
 		</div>
 	`
 	})
-
 	Vue.component('buyable', {
 		props: ['layer', 'data'],
 		template: `
@@ -304,7 +298,6 @@ function loadVue() {
 			}
 		},
 	})
-
 	Vue.component('respec-button', {
 		props: ['layer', 'data'],
 		template: `
@@ -314,7 +307,6 @@ function loadVue() {
 			</div>
 			`
 	})
-	
 	Vue.component('clickables', {
 		props: ['layer', 'data'],
 		template: `
@@ -329,7 +321,6 @@ function loadVue() {
 		</div>
 	`
 	})
-
 	// data = id of clickable
 	Vue.component('clickable', {
 		props: ['layer', 'data'],
@@ -365,7 +356,6 @@ function loadVue() {
 			}
 		},
 	})
-
 	Vue.component('master-button', {
 		props: ['layer', 'data'],
 		template: `
@@ -373,8 +363,6 @@ function loadVue() {
 			v-on:click="run(tmp[layer].clickables.masterButtonPress, tmp[layer].clickables)" v-bind:class="{ longUpg: true, can: player[layer].unlocked, locked: !player[layer].unlocked }">{{tmp[layer].clickables.masterButtonText ? tmp[layer].clickables.masterButtonText : "Click me!"}}</button>
 	`
 	})
-
-
 	// data = optionally, array of rows for the grid to show
 	Vue.component('grid', {
 		props: ['layer', 'data'],
@@ -390,7 +378,6 @@ function loadVue() {
 		</div>
 	`
 	})
-
 	Vue.component('gridable', {
 		props: ['layer', 'data'],
 		template: `
@@ -426,7 +413,6 @@ function loadVue() {
 			}
 		},
 	})
-
 	// data = id of microtab family
 	Vue.component('microtabs', {
 		props: ['layer', 'data'],
@@ -444,8 +430,6 @@ function loadVue() {
 		</div>
 		`
 	})
-
-
 	// data = id of the bar
 	Vue.component('bar', {
 		props: ['layer', 'data'],
@@ -463,8 +447,6 @@ function loadVue() {
 		</div></div>
 		`
 	})
-
-
 	Vue.component('achievements', {
 		props: ['layer', 'data'],
 		template: `
@@ -478,7 +460,6 @@ function loadVue() {
 		</div>
 		`
 	})
-
 	// data = id
 	Vue.component('achievement', {
 		props: ['layer', 'data'],
@@ -493,7 +474,6 @@ function loadVue() {
 		</div>
 		`
 	})
-
 	// Data is an array with the structure of the tree
 	Vue.component('tree', {
 		props: ['layer', 'data'],
@@ -510,7 +490,6 @@ function loadVue() {
 
 	`
 	})
-
 	// Data is an array with the structure of the tree
 	Vue.component('upgrade-tree', {
 		props: ['layer', 'data'],
@@ -519,7 +498,6 @@ function loadVue() {
 		},
 		template: `<thing-tree :layer="layer" :data = "data" :type = "'upgrade'"></thing-tree>`
 	})
-
 	// Data is an array with the structure of the tree
 	Vue.component('buyable-tree', {
 		props: ['layer', 'data'],
@@ -528,7 +506,6 @@ function loadVue() {
 		},
 		template: `<thing-tree :layer="layer" :data = "data" :type = "'buyable'"></thing-tree>`
 	})
-
 	// Data is an array with the structure of the tree
 	Vue.component('clickable-tree', {
 		props: ['layer', 'data'],
@@ -537,7 +514,6 @@ function loadVue() {
 		},
 		template: `<thing-tree :layer="layer" :data = "data" :type = "'clickable'"></thing-tree>`
 	})
-
 	Vue.component('thing-tree', {
 		props: ['layer', 'data', 'type'],
 		computed: {
@@ -552,8 +528,6 @@ function loadVue() {
 		</span></div>
 	`
 	})
-
-
 	// Updates the value in player[layer][data]
 	Vue.component('text-input', {
 		props: ['layer', 'data'],
@@ -562,7 +536,6 @@ function loadVue() {
 			v-on:change="player[layer][data] = toValue(document.getElementById('input-' + layer + '-' + data).value, player[layer][data])">
 		`
 	})
-
 	// Updates the value in player[layer][data][0]
 	Vue.component('slider', {
 		props: ['layer', 'data'],
@@ -571,7 +544,6 @@ function loadVue() {
 			<tooltip :text="player[layer][data[0]]"></tooltip><input type="range" v-model="player[layer][data[0]]" :min="data[1]" :max="data[2]"></div>
 		`
 	})
-
 	// Updates the value in player[layer][data[0]], options are an array in data[1]
 	Vue.component('drop-down', {
 		props: ['layer', 'data'],
@@ -596,7 +568,6 @@ function loadVue() {
 				v-bind:class="{ longUpg: true, can: player[layer].unlocked, locked: !player[layer].unlocked }">{{tmp[layer].buyables.sellAllText ? tmp[layer].buyables.sellAllText : "Sell All"}}</button>
 	`
 	})
-
 	// SYSTEM COMPONENTS
 	Vue.component('node-mark', systemComponents['node-mark'])
 	Vue.component('tab-buttons', systemComponents['tab-buttons'])
@@ -608,7 +579,6 @@ function loadVue() {
 	Vue.component('tooltip', systemComponents['tooltip'])
 	Vue.component('particle', systemComponents['particle'])
 	Vue.component('bg', systemComponents['bg'])
-
 
 	app = new Vue({
 		el: "#app",

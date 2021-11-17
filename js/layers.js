@@ -13,14 +13,15 @@ addLayer("h", {
     clickables: {
         11: {
             title: "Go Home",
-            canClick() {return true},
+            canClick() {return false},
             onClick() {
                 window.location.href = "https://RTXT25.github.io"
             },
-            tooltip: "Go Back To Home Page"
+            tooltip: "You Are Already On The Home Page"
         }
     },
     tabFormat: [
+        "blank",
         ["clickable", 11]
     ]
 })
@@ -35,7 +36,7 @@ addLayer("sii", {
     symbol: "🖥️",
     position: 0,
     branches: ["p"],
-    tooltip: "The Stuff I Am In",
+    tooltip: "Stuff And Stuff",
     clickables: {
         11: {
             title: "Play Here", // The Bored Tree
