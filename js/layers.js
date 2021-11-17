@@ -70,11 +70,11 @@ addLayer("sii", {
             title: "Find Here", // meance Client
             canClick() {return true},
             onClick() {
-                window.location.href = "https://github.com/MenaceClient"
+                window.location.href = "http://menace-client.ml/"
             }
         },
         68: {
-            title: "Click Here", // meance Client
+            title: "Click Here", // trees
             canClick() {return true},
             onClick() {
                 window.location.href = "https://rtxt25.github.io/RTreeXTree/"
