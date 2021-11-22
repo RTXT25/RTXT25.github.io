@@ -49,14 +49,14 @@ addLayer("sii", {
             title: "Play Here", // Project Orion
             canClick() {return true},
             onClick() {
-                window.location.href = "https://rtxt25.github.io/project-orion/"
+                window.location.href = "https://rtxt25.github.io/Project-Orion/"
             }
         },
         13: {
             title: "Play Here", // Plus 1 Tree
             canClick() {return true},
             onClick() {
-                window.location.href = "https://rtxt25.github.io/plus1tree"
+                window.location.href = "https://rtxt25.github.io/Plus1Tree"
             }
         },
         14: {
