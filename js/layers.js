@@ -33,6 +33,7 @@ addLayer("sii", {
     }},
     color: "#d47800",
     row: 0,
+    nodeStyle: { "width" : "150px", "height" : "150px"},
     symbol: "🖥️",
     position: 0,
     branches: ["p"],
@@ -139,6 +140,7 @@ addLayer("i", {
     row: 0,
     symbol: "ℹ️",
     position: 0,
+    nodeStyle: { "width" : "150px", "height" : "150px"},
     branches: ["p"],
     tooltip: "Info And Info",
     clickables: {
