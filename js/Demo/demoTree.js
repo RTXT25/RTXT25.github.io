@@ -11,11 +11,6 @@ var layoutInfo = {
 }
 
 // A "ghost" layer which offsets f in the tree
-addNode("spook", {
-    row: 1,
-    layerShown: "ghost",
-}, 
-)
 // A "ghost" layer which offsets f in the tree
 
 addLayer("tree-tab", {
