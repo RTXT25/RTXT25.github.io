@@ -1,28 +1,42 @@
 let modInfo = {
-	name: "The Modding Tree",
-	id: "modbase",
-	pointsName: "points",
-	modFiles: ["Demo/layers/c.js", "Demo/layers/f.js", "Demo/layers/a.js", "Demo/demoTree.js"],
+	name: "RTXT25.Github.io",
+	id: "RTXT25.Github.io",
+	author: "RTXT25",
+	pointsName: "points cuz funny",
+	modFiles: ["Demo/demoTree.js", "Demo/demolayers.js"],
 
 
 	discordName: "",
 	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	initialStartPoints: new Decimal (404), // Used for hard resets and new players
+	offlineLimit: 0,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "2.6.6",
-	name: "Fixed Reality",
+	num: "2.2",
+	name: "Website Revamped",
 }
 
-let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+let changelog = `<h1>Changelog:</h1><br><br>
+		<h3>Website Revamped v2.3</h3><br>
+		- New 404 Page.<br>
+		<br>
+		<h3>Website Revamped: Revamp Push 3 v2.2</h3><br>
+		- Added Even More Stuff.<br>
+		<br>
+		<h3>Website Revamped: Revamp Push 2 v2.1</h3><br>
+		- Added More Stuff.<br>
+		<br>
+		<h3>Website Revamped: Revamp Push 1 v2.0</h3><br>
+		- Made The Thing.<br>
+		<br>
+		<h3>Old Website v1.0</h3><br>
+		- The old one.<br>
+		<br>
+		Why Does A Website Need A Change Log`
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+let winText = ` `
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
 var doNotCallTheseFunctionsEveryTick = ["doReset", "buy", "onPurchase", "blowUpEverything"]
@@ -33,7 +47,7 @@ function getStartPoints(){
 
 // Determines if it should show points/sec
 function canGenPoints(){
-	return hasUpgrade("c", 11)
+	return false
 }
 
 // Calculate points/sec!
@@ -48,20 +62,15 @@ function getPointGen() {
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
-	weather: "Yes",
-	happiness: new Decimal(72),
 }}
 
 // Display extra things at the top of the page
 var displayThings = [
-	function() {if (player.points.eq(69)) return "Tee hee!"},
-	function() {if (player.f.points.gt(1)) return `You have ${player.f.points} farm points. (Which do nothing.)`},
-	function() {if (inChallenge("c", 11)) return "The game is currently <h1>0%</h1> harder."},
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("11"))
+	return player.points.gte(new Decimal("0"))
 }
 
 
