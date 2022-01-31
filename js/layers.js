@@ -203,7 +203,7 @@ addLayer("i", {
         },
         About: {
             title: "About",
-            body() { return "me do stuff idk really but i am veryyyyy cooool and pog gaming" },
+            body() { return "me do stuff idk really but i am veryyyyy cooool and pog gaming " },
         },
     },
     tabFormat: {
