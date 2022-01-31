@@ -145,31 +145,38 @@ addLayer("i", {
     tooltip: "Info And Info",
     clickables: {
         11: {
-            title: "▶️", // 
+            title: "<h1>▶️</h1>", // 
             canClick() {return true},
             onClick() {
                 window.location.href = "https://www.youtube.com/channel/UCd6XW-wNMjmUl2L-18Pjk5A"
             }
         },
         12: {
-            title: "Play Here", // 
+            title: "<h1>G</h1>", // 
             canClick() {return true},
             onClick() {
-                window.location.href = "https://rtxt25.github.io/project-orion/"
+                window.location.href = "https://github.com/RTXT25"
             }
         },
         13: {
-            title: "Play Here", // 
+            title: "<h1>🐦<h1>", // 
             canClick() {return true},
             onClick() {
-                window.location.href = "https://rtxt25.github.io/plus1tree"
+                window.location.href = "https://twitter.com/rtxt25"
             }
         },
         14: {
-            title: "",
+            title: "<h1>T<h1>",
             canClick() {return true},
             onClick() {
-                window.location.href = "https://RTXT25.github.io"
+                window.location.href = "https://www.twitch.tv/rtxt25"
+            }
+        },
+        15: {
+            title: "<h1>R<h1>",
+            canClick() {return true},
+            onClick() {
+                window.location.href = "https://www.reddit.com/user/Skool_human_boi"
             }
         },
     },
@@ -178,11 +185,40 @@ addLayer("i", {
             title: "My Youtube Channel",
             body() { return "A Youtube Channel That Might Make A Bad Video" },
         },
+        github: {
+            title: "My Github Profile",
+            body() { return "Code and stuff here" },
+        },
+        reddit: {
+            title: "My Reddit Account",
+            body() { return "IDK its reddit" },
+        },
+        twitch: {
+            title: "My Twitch Channel",
+            body() { return "I never stream" },
+        },
+        twitter: {
+            title: "My Twitter profile",
+            body() { return "Random stuff" },
+        },
+        About: {
+            title: "About",
+            body() { return "me do stuff idk really but i am veryyyyy cooool and pog gaming" },
+        },
     },
     tabFormat: {
-        "TAB": {
+        "About": {
+            content: [
+                ["row", [["infobox","About"]],],
+            ],
+        },
+        "Links": {
             content: [
                 ["row", [["clickable", 11],["infobox","YT"]],],
+                ["row", [["clickable", 12],["infobox","github"]],],
+                ["row", [["clickable", 13],["infobox","twitter"]],],
+                ["row", [["clickable", 14],["infobox","twitch"]],],
+                ["row", [["clickable", 15],["infobox","reddit"]],],
             ],
         },
 
