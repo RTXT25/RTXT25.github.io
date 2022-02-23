@@ -71,7 +71,7 @@ addLayer("sii", {
             title: "Find Here", // meance Client
             canClick() {return true},
             onClick() {
-                window.location.href = "http://menace-client.ml/"
+                window.location.href = "http://menaceclient.ml/"
             }
         },
         68: {
