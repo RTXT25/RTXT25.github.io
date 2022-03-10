@@ -239,7 +239,7 @@ addLayer("M", {
     tooltip: "Minecraft Mods",
     clickables: {
         11: {
-            title: "<h1>▶️</h1>", // 
+            title: "<h1>⬇️</h1>", // 
             canClick() {return true},
             onClick() {
                 window.location.href = "/downloads/minecraftMods/LEAN.jar"
