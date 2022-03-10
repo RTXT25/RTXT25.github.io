@@ -224,3 +224,49 @@ addLayer("i", {
 
     }
 })
+addLayer("M", {
+    name: "Info",
+    startData() {return {
+        unlocked: true,
+		points: new Decimal(0)
+    }},
+    color: "#633a00",
+    row: 1,
+    symbol: "<h1>⛏️</h1>",
+    position: 0,
+    nodeStyle: { "width" : "150px", "height" : "150px"},
+    branches: ["p"],
+    tooltip: "Minecraft Mods",
+    clickables: {
+        11: {
+            title: "<h1>▶️</h1>", // 
+            canClick() {return true},
+            onClick() {
+                window.location.href = "/downloads/minecraftMods/LEAN.jar"
+            }
+        },
+    },
+    infoboxes:{
+        Lean: {
+            title: "LEAN",
+            body() { return "A Forge 1.17.1 Mod That adds Lean To The Game" },
+        },
+        About: {
+            title: "My Minecraft mods",
+            body() { return "My Bad Minecraft Mods" },
+        },
+    },
+    tabFormat: {
+        "About": {
+            content: [
+                ["row", [["infobox","About"]],],
+            ],
+        },
+        "Downloads": {
+            content: [
+                ["row", [["clickable", 11],["infobox","Lean"]],],
+            ],
+        },
+
+    }
+})
