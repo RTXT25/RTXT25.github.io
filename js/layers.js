@@ -225,7 +225,7 @@ addLayer("i", {
     }
 })
 addLayer("M", {
-    name: "Info",
+    name: "Minecraft",
     startData() {return {
         unlocked: true,
 		points: new Decimal(0)
@@ -236,7 +236,7 @@ addLayer("M", {
     position: 0,
     nodeStyle: { "width" : "150px", "height" : "150px"},
     branches: ["p"],
-    tooltip: "Minecraft Mods",
+    tooltip: "Minecraft Stuff",
     clickables: {
         11: {
             title: "<h1>⬇️</h1>", // 
@@ -245,15 +245,26 @@ addLayer("M", {
                 window.location.href = "/downloads/minecraftMods/LEAN.jar"
             }
         },
+        12: {
+            title: "<h1>⬇️</h1>", // 
+            canClick() {return true},
+            onClick() {
+                window.location.href = "/downloads/MineraftTexture/pvpdefault/RTXT25-Default-PVP.zip"
+            }
+        },
     },
     infoboxes:{
         Lean: {
             title: "LEAN",
             body() { return "A Forge 1.17.1 Mod That adds Lean To The Game" },
         },
+        pvpde: {
+            title: "RTXT25 Default PVP v1.0",
+            body() { return "A 1.8.9 PVP texture pack with textures from the 'texture update'" },
+        },
         About: {
-            title: "My Minecraft mods",
-            body() { return "My Bad Minecraft Mods" },
+            title: "My Minecraft Stuff",
+            body() { return "Bad Minecraft Things Like Resource Packs and Mods" },
         },
     },
     tabFormat: {
@@ -265,6 +276,7 @@ addLayer("M", {
         "Downloads": {
             content: [
                 ["row", [["clickable", 11],["infobox","Lean"]],],
+                ["row", [["clickable", 12],["infobox","pvpde"]],],
             ],
         },
 
