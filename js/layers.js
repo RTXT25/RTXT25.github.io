@@ -249,7 +249,7 @@ addLayer("M", {
             title: "<h1>⬇️</h1>", // 
             canClick() {return true},
             onClick() {
-                window.location.href = "/downloads/MineraftTexture/pvpdefault/RTXT25-Default-PVP.zip"
+                window.location.href = "/downloads/MineraftTexture/pvpdefault/RTXT25DefaultPVP/RTXT25-Default-PVP.zip"
             }
         },
     },
