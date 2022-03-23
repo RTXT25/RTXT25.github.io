@@ -242,14 +242,14 @@ addLayer("M", {
             title: "<h1>⬇️</h1>", // 
             canClick() {return true},
             onClick() {
-                window.location.href = "/downloads/minecraftMods/LEAN.jar"
+                window.location.href = "https://rtxt25.github.io/Downloads/Downloads/"
             }
         },
         12: {
             title: "<h1>⬇️</h1>", // 
             canClick() {return true},
             onClick() {
-                window.location.href = "/downloads/MineraftTexture/pvpdefault/RTXT25DefaultPVP/RTXT25-Default-PVP.zip"
+                window.location.href = "https://rtxt25.github.io/Downloads/Downloads/"
             }
         },
     },
