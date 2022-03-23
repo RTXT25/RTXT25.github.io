@@ -242,14 +242,14 @@ addLayer("M", {
             title: "<h1>⬇️</h1>", // 
             canClick() {return true},
             onClick() {
-                window.location.href = "https://rtxt25.github.io/Downloads/Downloads/"
+                window.location.href = "https://rtxt25.github.io/Downloads/actualstuff/minecraft/mods/LEAN.jar"
             }
         },
         12: {
             title: "<h1>⬇️</h1>", // 
             canClick() {return true},
             onClick() {
-                window.location.href = "https://rtxt25.github.io/Downloads/Downloads/"
+                window.location.href = "https://rtxt25.github.io/Downloads/actualstuff/minecraft/texturepack/RTXT25DefaultPVP/RTXT25-Default-PVPv1.0.1.zip"
             }
         },
     },
@@ -259,8 +259,8 @@ addLayer("M", {
             body() { return "A Forge 1.17.1 Mod That adds Lean To The Game" },
         },
         pvpde: {
-            title: "RTXT25 Default PVP v1.0",
-            body() { return "A 1.8.9 PVP texture pack with textures from the 'texture update'" },
+            title: "RTXT25 Default PVP v1.0.1",
+            body() { return "A 1.8.9 PVP texture pack with textures from the 'texture update'."},
         },
         About: {
             title: "My Minecraft Stuff",
