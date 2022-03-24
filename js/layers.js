@@ -1,5 +1,5 @@
-addLayer("h", {
-    name: "homepage",
+addLayer("menu", {
+    name: "menu",
     startData() {return {
         unlocked: true,
 		points: new Decimal(0)
@@ -9,7 +9,7 @@ addLayer("h", {
     symbol: "🏠",
     position: 0,
     branches: ["p"],
-    tooltip: "Go Back To The Home Page",
+    tooltip: "Open The Menu",
     clickables: {
         11: {
             title: "Go Home",
@@ -18,11 +18,27 @@ addLayer("h", {
                 window.location.href = "https://RTXT25.github.io"
             },
             tooltip: "You Are Already On The Home Page"
-        }
+        },
+        12: {
+            title: "Go To Downloads",
+            canClick() {return true},
+            onClick() {
+                window.location.href = "https://RTXT25.github.io/Downloads"
+            },
+            tooltip: "Go To Downloads"
+        },
+    },
+    infoboxes:{
+        Main: {
+            title: "Menu",
+            body() { return "<h1>MENU</h1>" },
+        },
     },
     tabFormat: [
         "blank",
-        ["clickable", 11]
+        ["row", [["infobox", "Main"],],],
+        "blank",
+        ["row", [["clickable", 11],["clickable", 12],],],
     ]
 })
 addLayer("sii", {
@@ -260,7 +276,7 @@ addLayer("M", {
         },
         pvpde: {
             title: "RTXT25 Default PVP v1.0.1",
-            body() { return "A 1.8.9 PVP texture pack with textures from the 'texture update'."},
+            body() { return "A 1.8.9 PVP texture pack with textures from the 'texture update'. Find Older Versions of the pack <a href=https://rtxt25.github.io/Downloads>Here<a/>"},
         },
         About: {
             title: "My Minecraft Stuff",
