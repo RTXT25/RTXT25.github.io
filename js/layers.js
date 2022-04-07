@@ -77,6 +77,13 @@ addLayer("sii", {
             }
         },
         14: {
+            title: "Click Here",
+            canClick() {return true},
+            onClick() {
+                window.location.href = "https://opensea.io/collection/etherclocks"
+            }
+        },
+        5: {
             title: "",
             canClick() {return true},
             onClick() {
@@ -119,6 +126,10 @@ addLayer("sii", {
             title: "Plus 1 Tree",
             body() { return "WIP Game I Am Making" },
         },
+        EC: {
+            title: "Ether Clocks",
+            body() { return "Clock NFTS go BRRRRRRRRRR" },
+        },
         M: {
             title: "Menace CLient",
             body() { return "A Minecraft Client That I Am Part Of" },
@@ -141,6 +152,7 @@ addLayer("sii", {
         "Other Stuff": {
             content: [
                 ["row", [["clickable", 69],["infobox","M"]],],
+                ["row", [["clickable", 14],["infobox","EC"]],],
             ],
         },
 
@@ -219,7 +231,7 @@ addLayer("i", {
         },
         About: {
             title: "About",
-            body() { return "me do stuff idk really but i am veryyyyy cooool and pog gaming " },
+            body() { return "I play video games and also things that make people question my sanity. " },
         },
     },
     tabFormat: {
