@@ -1,129 +1,252 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/4/47/Blue_sky_with_sun.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
 
-	<link rel="stylesheet" type="text/css" href="css/system-style.css" />
-	<link rel="stylesheet" type="text/css" href="css/bars.css" />
-	<link rel="stylesheet" type="text/css" href="css/components.css" />
-	<link rel="stylesheet" type="text/css" href="css/general-style.css" />
-	<link rel="stylesheet" type="text/css" href="css/misc.css" />
-	<link rel="stylesheet" type="text/css" href="css/other-tabs.css" />
-	<link rel="stylesheet" type="text/css" href="css/popup.css" />
-	<link rel="stylesheet" type="text/css" href="css/tree-node.css" />
+        .taskbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            height: 40px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
 
-	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+        .taskbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
 
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-	<script src="js/technical/break_eternity.js"></script>
-	<script src="js/technical/layerSupport.js"></script>
+        .taskbar li {
+            display: inline;
+            margin-right: 10px;
+        }
 
-	<script src="js/mod.js"></script>
-	<script src="js/technical/loader.js"></script>
+        .desktop {
+            padding: 20px;
+        }
 
-	<script src="js/technical/temp.js"></script>
-	<script src="js/technical/displays.js"></script>
-	
-	<script src="js/game.js"></script>
-	<script src="js/utils.js"></script>
-	<script src="js/utils/easyAccess.js"></script>
-	<script src="js/technical/systemComponents.js"></script>
-	<script src="js/components.js"></script>
-	<script src="js/technical/canvas.js"></script>
-	<script src="js/technical/particleSystem.js"></script>
-	<script src="js/utils/NumberFormating.js"></script>
-	<script src="js/utils/options.js"></script>
-	<script src="js/utils/save.js"></script>
-	<script src="js/utils/themes.js"></script>
+        .icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: center;
+            color: #000;
+        }
 
+        .icon img {
+            width: 40px;
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .icon:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        #windows {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            overflow: auto;
+        }
+
+        .window {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .start-menu {
+            position: fixed;
+            bottom: 40px;
+            left: 10px;
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            border-radius: 5px;
+            display: none;
+            z-index: 1001;
+            padding: 10px;
+        }
+
+        .start-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .start-menu li {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+
+        .start-menu li:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .start-menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .static-popup {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none; /* Initially hidden */
+        }
+    </style>
 </head>
+<body>
+    <div class="desktop">
+        <div class="icon" id="recycle-bin">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Recycle_Bin_icon.png" alt="Recycle Bin">
+            <span>Recycle Bin</span>
+        </div>
+        <div class="icon" id="edge">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Microsoft_Edge_logo_%282020%29.svg" alt="Microsoft Edge">
+            <span>Microsoft Edge</span>
+        </div>
+        <div class="icon" id="logitech">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Logitech_logo.svg" alt="Logitech G HUB">
+            <span>Logitech G HUB</span>
+        </div>
+        <button id="open-popup">Open Popup</button>
+        <div class="static-popup" id="static-popup">
+            <span class="close-btn" onclick="closeStaticPopup()">X</span>
+            <h2>Static Popup</h2>
+            <p>This is a static popup window.</p>
+        </div>
+    </div>
+    <nav class="taskbar">
+        <ul>
+            <li id="start-button">🔲</li>
+            <li><a href="#search">🔍 Type here to search</a></li>
+        </ul>
+        <ul>
+            <li><a href="#wifi">📶</a></li>
+            <li><a href="#battery">🔋</a></li>
+            <li><a href="#volume">🔊</a></li>
+            <li id="date-time"></li>
+        </ul>
+    </nav>
+    <div class="start-menu" id="start-menu">
+        <ul>
+            <li><a href="#home">🏠 Home</a></li>
+            <li><a href="#about">ℹ️ About</a></li>
+            <li><a href="#portfolio">📁 Portfolio</a></li>
+            <li><a href="#contact">📞 Contact</a></li>
+        </ul>
+    </div>
+    <div id="windows">
+        <!-- Windows will be dynamically loaded here -->
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var icons = document.querySelectorAll('.icon');
 
+            icons.forEach(function(icon) {
+                icon.addEventListener('click', function() {
+                    var windowId = this.id + "-window";
+                    var existingWindow = document.getElementById(windowId);
 
-<body onload="load()" onmousemove="updateMouse(event)">
-	<div id="app">
-		<canvas id="treeCanvas" class="canvas" v-if="!(tmp.gameEnded && !player.keepGoing)"></canvas>
+                    if (!existingWindow) {
+                        var windowContent = document.createElement('div');
+                        windowContent.classList.add('window');
+                        windowContent.setAttribute('id', windowId);
+                        windowContent.innerHTML = "<span class='close-btn' onclick='closeWindow(\"" + windowId + "\")'>X</span><h2>" + this.querySelector('span').textContent + "</h2><p>This is the content of " + this.querySelector('span').textContent + " window.</p>";
+                        document.getElementById('windows').appendChild(windowContent);
+                    } else {
+                        existingWindow.style.display = "block";
+                    }
+                });
+            });
 
-		<div v-if="false" id="loadingSection" class="fullWidth">
-			<h1>Loading... (If this takes too long it means there was a serious error! (How did i break a website))←</h1>
-		</div>
-		<div class="vl" v-if="player.navTab !== 'none' && tmp.other.splitScreen && player.tab!='none' && !(tmp.gameEnded && !player.keepGoing)"></div>
-		<div v-if="(tmp.gameEnded && !player.keepGoing)" class="fullWidth">
-			<br>
-			<h2><h1>RTXT25.Github.io</h1></h2><br><br>
-			<h3 v-html="modInfo.winText"></h3><br>
-			<h2>Wass Popin Welcome To My Website. <br>Also This Is Better On PC</h2><br><br>
-			<div v-if="!player.timePlayedReset"> </div>
-			<br>
-			<button
-				class="longUpg can" onclick="keepGoing()"><h2>Enter The Site</h2></button>
-			<br><br><br>
-			<span v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink"
-					target="_blank">{{modInfo.discordName}}</a><br></span><br>
-			<br><br>
-		</div>
+            var startButton = document.getElementById('start-button');
+            var startMenu = document.getElementById('start-menu');
 
-		<div id="treeOverlay" v-if="!(tmp.gameEnded && !player.keepGoing) && (player.tab === 'none' || tmp.other.splitScreen || !readData(layoutInfo.showTree))" class="treeOverlay" onscroll="resizeCanvas()"
-			v-bind:class="{ 
-			fullWidth: (player.tab == 'none' || player.navTab == 'none'), 
-			col: (player.tab !== 'none' && player.navTab !== 'none'), 
-			left: (player.tab !== 'none' && player.navTab !== 'none')}"
-			 :style="{'margin-top': !readData(layoutInfo.showTree) && player.tab == 'info-tab' ? '50px' : ''}">
-			<div id="version" onclick="showTab('changelog-tab')" class="overlayThing" style="margin-right: 13px" >
-				{{VERSION.withoutName}}</div>
-			<button
-			v-if="((player.navTab == 'none' && (tmp[player.tab].row == 'side' || tmp[player.tab].row == 'otherside' || player[player.tab].prevTab)) || player[player.navTab]?.prevTab)"				class="other-back overlayThing" onclick="goBack(player.navTab == 'none' ? player.tab : player.navTab)">←</button>
-			<img id="optionWheel" class="overlayThing" v-if="player.tab!='options-tab'" src="options_wheel.png"
-				onclick="showTab('options-tab')"></img>
-			<div id="discord" class="overlayThing">
-				<img onclick="window.open((modInfo.discordLink ? modInfo.discordLink : ''),'mywindow')"
-					src="discord.png" target="_blank"></img>
-				<ul id="discord-links">
-					<li v-if="modInfo.discordLink"><a class="link" v-bind:href="modInfo.discordLink"
-							target="_blank">{{modInfo.discordName}}</a><br></li>
-				</ul>
-			</div>
-			<overlay-head v-if="!(tmp.gameEnded && !player.keepGoing)"></overlay-head>
-			<div class="sideLayers">
-				<div v-for="(node, index) in OTHER_LAYERS['side']">
-					<tree-node :layer='node' :abb='tmp[node].symbol' :size="'small'" :key="'side' + index"></tree-node>
-				</div>
-			</div>
-		</div>
-		
-		<div v-if="!(tmp.gameEnded && !player.keepGoing) && (player.tab === 'none' || tmp.other.splitScreen)" id="treeTab"  onscroll="resizeCanvas()" 
-			v-bind:class="{ fullWidth: (player.tab == 'none' || player.navTab == 'none'), col: (player.tab !== 'none' && player.navTab !== 'none'), left: (player.tab !== 'none' && player.navTab !== 'none')}">
-			<br><br><br><br>
-			<overlay-head id="fakeHead" style="visibility: hidden;">
-			</overlay-head>
-			<layer-tab :layer="player.navTab == 'none' ? player.tab : player.navTab" :key="'left'"></layer-tab>
-			<bg :layer="player.navTab == 'none' ? player.tab : player.navTab" ></bg>
-		</div>
+            startButton.addEventListener('click', function() {
+                startMenu.style.display = startMenu.style.display === 'block' ? 'none' : 'block';
+            });
 
-		<!-- Popups -->
-		<div class="popup-container">
-			<transition-group name="fade">
-				<div v-for="popup,index in activePopups" class="popup" v-bind:class="popup.type"
-					v-bind:key="'p' + popup.id" v-on:click="() => {activePopups.splice(index, 1)}" v-bind:style="popup.color ? {'background-color': popup.color} : {}">
-					<h3>{{popup.title}}</h3><br>
-					<h2 v-html="popup.message"></h2>
-				</div>
-			</transition-group>
-		</div>
-		<div class="particle-container">
-				<div v-for="particle,index in particles">
-					<particle :data="particle" :index="index" v-bind:key="'b' + particle.id"></particle>
-				</div>
-		</div>
+            window.addEventListener('click', function(event) {
+                if (!startButton.contains(event.target) && !startMenu.contains(event.target)) {
+                    startMenu.style.display = 'none';
+                }
+            });
 
-		<div v-if="player.navTab !== 'none' && player.tab !== 'none' && !(tmp.gameEnded && !player.keepGoing)" onscroll="resizeCanvas()" v-bind:class="{ fullWidth: player.navTab == 'none' || !tmp.other.splitScreen || !readData(layoutInfo.showTree), col: player.navTab != 'none', right: player.navTab != 'none', fast: true, tab: true}">
-			<div v-for="layer in LAYERS">
-				<div v-if="player.tab==layer">
-					<layer-tab :layer="layer" :back="'none'" :spacing="'50px'" :key="'left'"></layer-tab>
-				</div>
-			</div>
-			<bg :layer="player.tab" ></bg>
+            function updateTime() {
+                var now = new Date();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12; // the hour '0' should be '12'
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                var strTime = hours + ':' + minutes + ' ' + ampm;
+                document.getElementById('date-time').innerHTML = strTime;
+            }
 
-		</div>
-		<div class = "bg2" v-bind:style = "tmp.backgroundStyle"></div>
+            updateTime(); // initial call
+            setInterval(updateTime, 60000); // update every minute
+        });
 
-	</div>
+        function closeWindow(id) {
+            var window = document.getElementById(id);
+            window.style.display = "none";
+        }
+        
+    </script>
 </body>
+</html>
