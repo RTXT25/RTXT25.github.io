@@ -133,8 +133,8 @@
             text-decoration: none;
         }
         .static-popup {
-            background-color: #fff;
-            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+            border: 1px solid #999;
             border-radius: 5px;
             width: 300px;
             padding: 20px;
@@ -146,26 +146,60 @@
             z-index: 1000;
             display: none; /* Initially hidden */
         }
+
+        .static-popup .title-bar {
+            background-color: #0078d7;
+            color: #fff;
+            padding: 8px 20px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .static-popup h2 {
+            margin-top: 0;
+        }
+
+        .static-popup p {
+            margin-bottom: 0;
+        }
+
+        .static-popup .close-btn {
+            color: #888;
+            font-size: 18px;
+        }
+
+        .static-popup .close-btn:hover {
+            color: #555;
+        }
+        .square-button {
+        width: 100px; /* Adjust the width as needed */
+        height: 100px; /* Set the same value as width to make it a square */
+        text-align: center;
+        background-color: #007bff; /* Default button color */
+        color: #ffffff; /* Default text color */
+        border: none;
+        cursor: pointer;
+    }
     </style>
 </head>
 <body>
     <div class="desktop">
-        <div class="icon" id="recycle-bin">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Recycle_Bin_icon.png" alt="Recycle Bin">
-            <span>Recycle Bin</span>
+        <button class="square-button" id="o1"><h1>ℹ️</h1></button>
+        <button class="square-button" id="o2"><h1>⛏️</h1></button>
+        <button class="square-button" id="o3"><h1>💻</h1></button>
+        <div class="static-popup" id="static-popup1">
+            <span class="close-btn" onclick="closeStaticPopup('static-popup1')">X</span>
+            <h2>Information</h2>
+            <p>This is a static popup window.</p>
         </div>
-        <div class="icon" id="edge">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Microsoft_Edge_logo_%282020%29.svg" alt="Microsoft Edge">
-            <span>Microsoft Edge</span>
+        <div class="static-popup" id="static-popup2">
+            <span class="close-btn" onclick="closeStaticPopup('static-popup2')">X</span>
+            <h2>Minecraft STuff</h2>
+            <p>This is a static popup window.</p>
         </div>
-        <div class="icon" id="logitech">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Logitech_logo.svg" alt="Logitech G HUB">
-            <span>Logitech G HUB</span>
-        </div>
-        <button id="open-popup">Open Popup</button>
-        <div class="static-popup" id="static-popup">
-            <span class="close-btn" onclick="closeStaticPopup()">X</span>
-            <h2>Static Popup</h2>
+        <div class="static-popup" id="static-popup3">
+            <span class="close-btn" onclick="closeStaticPopup('static-popup3')">X</span>
+            <h2>Static Pasgdtfopup</h2>
             <p>This is a static popup window.</p>
         </div>
     </div>
@@ -189,30 +223,8 @@
             <li><a href="#contact">📞 Contact</a></li>
         </ul>
     </div>
-    <div id="windows">
-        <!-- Windows will be dynamically loaded here -->
-    </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var icons = document.querySelectorAll('.icon');
-
-            icons.forEach(function(icon) {
-                icon.addEventListener('click', function() {
-                    var windowId = this.id + "-window";
-                    var existingWindow = document.getElementById(windowId);
-
-                    if (!existingWindow) {
-                        var windowContent = document.createElement('div');
-                        windowContent.classList.add('window');
-                        windowContent.setAttribute('id', windowId);
-                        windowContent.innerHTML = "<span class='close-btn' onclick='closeWindow(\"" + windowId + "\")'>X</span><h2>" + this.querySelector('span').textContent + "</h2><p>This is the content of " + this.querySelector('span').textContent + " window.</p>";
-                        document.getElementById('windows').appendChild(windowContent);
-                    } else {
-                        existingWindow.style.display = "block";
-                    }
-                });
-            });
-
             var startButton = document.getElementById('start-button');
             var startMenu = document.getElementById('start-menu');
 
@@ -246,7 +258,26 @@
             var window = document.getElementById(id);
             window.style.display = "none";
         }
-        
+        document.getElementById('o1').addEventListener('click', function() {
+                var staticPopup = document.getElementById('static-popup1');
+                staticPopup.style.display = 'block';
+            });
+        // Function to open the static popup
+document.getElementById('o2').addEventListener('click', function() {
+    var staticPopup = document.getElementById('static-popup2');
+    staticPopup.style.display = 'block';
+});
+
+document.getElementById('o3').addEventListener('click', function() {
+    var staticPopup = document.getElementById('static-popup3');
+    staticPopup.style.display = 'block';
+});
+
+// Function to close the static popup
+function closeStaticPopup(id) {
+    var staticPopup = document.getElementById(id);
+    staticPopup.style.display = 'none';
+}
     </script>
 </body>
 </html>
