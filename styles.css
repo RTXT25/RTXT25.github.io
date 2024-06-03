@@ -1,0 +1,67 @@
+
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+        #startpg, #homepg, #page3, #page4, #page5, #settingspg {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 2em;
+        }
+        #startpg.active, #homepg.active, #page3.active, #page4.active, #page5.active ,#settingspg.active{
+            display: block;
+        }
+        button {
+            background-size: cover;
+            width: 100px; /* adjust as needed */
+            height: 100px; /* adjust as needed */
+            border: none;
+            color: transparent;
+        }
+        .btnstart{
+            width: 250px; /* adjust as needed */
+            height: 80px;
+            background-image: url('png/PKlogo.png');
+        }
+        .btnsettings{
+            width: 250px; /* adjust as needed */
+            height: 80px;
+            background-image: url('png/PKlogo.png');
+        }
+        .btn-nuts {
+            background-image: url('png/PKlogo.png');
+        }
+        .btn-beans {
+            background-image: url('png/PKlogo.png');
+        }
+        .btn-legg {
+            background-image: url('png/PKlogo.png');
+        }
+        .btn-rock {
+            background-image: url('png/PKlogo.png');
+        }
+        @keyframes grow-shrink {
+            0% { transform: scale(1) rotate(20deg); }
+            50% { transform: scale(1.1) rotate(20deg); }
+            100% { transform: scale(1) rotate(20deg); }
+        }
+        #mainsplash {
+            position: fixed;
+            top: 00px;
+            right: -170px;
+            transform: rotate(20deg);
+            animation: grow-shrink 1.5s infinite;
+        }
+        input[type="checkbox"].btn-settings {
+            appearance: none;
+            background-color: #f00; /* Change to match your button color */
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        input[type="checkbox"].btn-settings:checked {
+            background-color: #0f0; /* Change to desired checked color */
+        }

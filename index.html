@@ -1,39 +1,39 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Background Changer</title>
-    <style>
-        body {
-            background-image: url('/png/PKlogo');
-            background-size: cover;
-            transition: background 0.5s ease-in-out;
-        }
-    </style>
-    <script>
-        function changeBackground(imageName) {
-            document.body.style.backgroundColor = 'orange';
-            setTimeout(function() {
-                document.body.style.backgroundImage = "url('" + imageName + "')";
-                document.body.style.backgroundColor = '';
-            }, 1000);
-        }
-
-        function changeColor(color) {
-            document.body.style.backgroundColor = 'black';
-            setTimeout(function() {
-                document.body.style.backgroundImage = 'none';
-                document.body.style.backgroundColor = color;
-            }, 1000);
-        }
-    </script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <button onclick="changeBackground('image1.jpg')">Change to Image 1</button>
-    <button onclick="changeBackground('image2.jpg')">Change to Image 2</button>
-    <button onclick="changeBackground('image3.jpg')">Change to Image 3</button>
-    <button onclick="changeColor('red')">Change to Red</button>
-    <button onclick="changeColor('blue')">Change to Blue</button>
-    <button onclick="changeColor('green')">Change to Green</button>
-    <!-- Add more buttons as needed -->
+    <div id="startpg" class="active">
+        <h1>RTXT25.Github.io</h1>
+        <div id="mainsplash"><p style="color:rgb(225, 255, 0);" id="splashtxt">Splash text</p></div>
+        <button class="btnstart" onclick="switchPage('homepg');"></button><p></p>
+        <button class="btnsettings" onclick="switchPage('settingspg');"></button>
+    </div>
+    <div id="settingspg">
+        <p>Settings</p>
+        <input type="checkbox" id="skipstartcb" class="btn-settings">
+        <label for="skipstarcb">Skip Start Page</label><p>
+        <button class="btn-nuts" onclick="switchPage('homepg');"></button>
+    </div>
+    <div id="homepg">
+        <p>home page</p>
+        <button class="btn-beans" onclick="switchPage('page3');"></button>
+        <button class="btn-legg" onclick="switchPage('page4');"></button>
+        <button class="btn-rock" onclick="switchPage('page5');"></button>
+        <button class="btnsettings" onclick="switchPage('settingspg');">
+    </div>
+    <div id="page3">
+        <p>Beans</p>
+        <button class="btn-nuts" onclick="switchPage('homepg');"></button>
+    </div>
+    <div id="page4">
+        <p>Legg</p>
+        <button class="btn-nuts" onclick="switchPage('homepg');"></button>
+    </div>
+    <div id="page5">
+        <p>Rock</p>
+        <button class="btn-nuts" onclick="switchPage('homepg');"></button>
+    </div>
 </body>
 </html>
