@@ -12,9 +12,6 @@
         #startpg.active, #homepg.active, #info.active, #minecraft.active, #projects.active ,#settingspg.active{
             display: block;
         }
-        #smaltxt{
-            font-size: 3px;
-        }
         #bigtxt{
             font-size: 2em;
         }
