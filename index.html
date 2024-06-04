@@ -2,11 +2,18 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            var words = ['Comic Sans Enjoyer', 'Splatoon Addict', 'Lunar was here','Average Balls Enjoyer', 'Insert Splash Text Here'];
+            var randomWord = words[Math.floor(Math.random() * words.length)];
+            document.getElementById('splashtext').textContent = randomWord;
+        };
+    </script>
 </head>
 <body>
     <div id="startpg" class="active">
         <h1>RTXT25.Github.io</h1>
-        <div id="mainsplash"><p style="color:rgb(225, 255, 0);" id="splashtxt">Splash text</p></div>
+        <div id="mainsplash"><p style="color:rgb(225, 255, 0);" id="splashtext">Splash text</p></div>
         <button class="btnstart" onclick="switchPage('homepg');"></button><p></p>
         <button class="btnsettings" onclick="switchPage('settingspg');"></button>
     </div>
@@ -16,19 +23,21 @@
         <label for="skipstarcb">Skip Start Page</label><p>
         <button class="btn-nuts" onclick="switchPage('homepg');"></button>
     </div>
+
     <div id="homepg">
         <p>home page</p>
-        <button class="btn-beans" onclick="switchPage('page3');"></button>
-        <button class="btn-legg" onclick="switchPage('page4');"></button>
-        <button class="btn-rock" onclick="switchPage('page5');"></button>
+        <button class="btn-beans" onclick="switchPage('info');"></button><p></p>
+        <button class="btn-legg" onclick="switchPage('minecraft');"></button><p></p>
+        <button class="btn-rock" onclick="switchPage('page5');"></button><p></p>
         <button class="btnsettings" onclick="switchPage('settingspg');">
     </div>
-    <div id="page3">
-        <p>Beans</p>
+    <div id="info">
+        <h2>Info</h2>
+        <p>Random infos<p>
         <button class="btn-nuts" onclick="switchPage('homepg');"></button>
     </div>
-    <div id="page4">
-        <p>Legg</p>
+    <div id="minecraft">
+        <p>minecraft</p>
         <button class="btn-nuts" onclick="switchPage('homepg');"></button>
     </div>
     <div id="page5">
