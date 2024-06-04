@@ -2,22 +2,24 @@
         body {
             font-family: 'Comic Sans MS', sans-serif;
         }
-        #startpg, #homepg, #info, #minecraft, #page5, #settingspg {
+        #startpg, #homepg, #info, #minecraft, #projects, #settingspg {
             display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             text-align: center;
+        }
+        #startpg{
             font-size: 2em;
         }
-        #startpg.active, #homepg.active, #info.active, #minecraft.active, #page5.active ,#settingspg.active{
+        #startpg.active, #homepg.active, #info.active, #minecraft.active, #projects.active ,#settingspg.active{
             display: block;
+        }
+        #smaltxt{
+            font-size: 3px;
+        }
+        #bigtxt{
+            font-size: 2em;
         }
         button {
             background-size: cover;
-            width: 100px; /* adjust as needed */
-            height: 100px; /* adjust as needed */
             border: none;
             color: transparent;
             transition: filter 0.3s ease;
@@ -35,17 +37,55 @@
             height: 80px;
             background-image: url('png/settings.png');
         }
-        .btn-nuts {
+        .btn-yt{
+            width: 250px; /* adjust as needed */
+            height: 80px;
+            background-image: url('png/yt.png');
+        }
+        .btn-x{
+            width: 250px; /* adjust as needed */
+            height: 80px;
+            background-image: url('png/xcom.png');
+        }
+        .btn-git{
+            width: 250px; /* adjust as needed */
+            height: 80px;
+            background-image: url('png/github.png');
+        }
+        .btn-twitch{
+            width: 250px; /* adjust as needed */
+            height: 80px;
+            background-image: url('png/twitch.png');
+        }
+        .btn-reddit{
+            width: 250px; /* adjust as needed */
+            height: 80px;
+            background-image: url('png/reddit.png');
+        }
+        .btn-home {
+            width: 250px; /* adjust as needed */
+            height: 80px;
             background-image: url('png/PKlogo.png');
         }
-        .btn-beans {
-            background-image: url('png/PKlogo.png');
+        .btn-info {
+            width: 250px; /* adjust as needed */
+            height: 80px;
+            background-image: url('png/info.png');
         }
         .btn-legg {
+            width: 250px; /* adjust as needed */
+            height: 80px;
             background-image: url('png/PKlogo.png');
         }
         .btn-rock {
+            width: 250px; /* adjust as needed */
+            height: 80px;
             background-image: url('png/PKlogo.png');
+        }
+        .btn-lean{
+            width: 100px;
+            height: 100px;
+            background-image: url('png/download.png');
         }
         @keyframes grow-shrink {
             0% { transform: scale(1) rotate(20deg); }
@@ -54,8 +94,8 @@
         }
         #mainsplash {
             position: fixed;
-            top: 00px;
-            right: -170px;
+            top: 50px;
+            right: 200px;
             transform: rotate(20deg);
             animation: grow-shrink 1.5s infinite;
         }
