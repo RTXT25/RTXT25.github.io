@@ -2,9 +2,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js"></script>
-    <script>
-        window.onload = function() {
-            var checkbox = document.getElementById('skipstartcb');
+    <script>window.onload = function() {
+        var checkbox = document.getElementById('skipstartcb');
     var isChecked = localStorage.getItem('checkboxState') === 'true';
     checkbox.checked = isChecked;
 
@@ -13,17 +12,16 @@
     });
     if (isChecked) {
         switchPage('homepg');
-    }
-            var words = ['Comic Sans Enjoyer', 'Splatoon Addict', 'Lunar was here','Average Balls Enjoyer', 'Insert Splash Text Here'];
-            var randomWord = words[Math.floor(Math.random() * words.length)];
-            document.getElementById('splashtext').textContent = randomWord;
-        };
-    </script>
+    }   
+        var words = ['Comic Sans Enjoyer', 'Splatoon Addict', 'Lunar was here','Average Balls Enjoyer', 'Insert Splash Text Here'];
+        var randomWord = words[Math.floor(Math.random() * words.length)];
+        document.getElementById('splashtext').textContent = randomWord;
+    };</script>
 </head>
 <body>
-    <div id="startpg" class="active"><br>
-        <h1>RTXT25.Github.io</h1>
+    <div id="startpg" class="active">
         <div id="mainsplash"><p style="color:rgb(225, 255, 0);" id="splashtext">Splash text no workie</p></div>
+        <h1>RTXT25.Github.io</h1>
         <button class="btnstart" onclick="switchPage('homepg');"></button><p></p>
         <button class="btnsettings" onclick="switchPage('settingspg');"></button>
     </div>
@@ -60,15 +58,16 @@
     <div id="minecraft">
         <h2 id="bigtxt">minecraft</h2>
         <p id="bigtxt">All my random minecraft stuffs</p>
-        <button class="btn-lean" onclick="window.open('https://www.reddit.com/user/Skool_human_boi', '_blank');"></button>
-        <p>a Minecraft mod that adds Lean to the game</p>
-        <button class="btn-rtxtpvp" onclick="window.open('https://www.reddit.com/user/Skool_human_boi', '_blank');"></button>
+        <button class="btn-lean" onclick="window.open('https://rtxt25.github.io/Downloads/actualstuff/minecraft/mods/LEAN.jar', '_blank');"></button>
+        <p>a  1.17.1 mod that adds Lean to the game</p>
+        <button class="btn-rtxtpvp" onclick="window.open('https://rtxt25.github.io/Downloads/actualstuff/minecraft/texturepack/RTXT25DefaultPVP/RTXT25-Default-PVPv1.0.1.zip', '_blank');"></button>
         <p>a 1.14 texture Edit for 1.8.9</p>
         <button class="btn-back" onclick="switchPage('homepg');"></button>
     </div>
     <div id="projects">
-        <p id="bigtxt">Project</p>
-        <p>i do thing</p>
+        <h2 id="bigtxt">Project</h2>
+        <p>i make thing sometimes</p>
+        <button class="btn-faiig" onclick="window.open('https://www.reddit.com/user/Skool_human_boi', '_blank');"></button>
         <button class="btn-back" onclick="switchPage('homepg');"></button>
     </div>
 </body>

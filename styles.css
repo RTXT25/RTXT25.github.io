@@ -1,6 +1,8 @@
-
         body {
             font-family: 'Comic Sans MS', sans-serif;
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
         }
         #startpg, #homepg, #info, #minecraft, #projects, #settingspg {
             display: none;
@@ -15,57 +17,36 @@
         #bigtxt{
             font-size: 2em;
         }
+        /* Button*/
         button {
             background-size: cover;
             border: none;
             color: transparent;
+            background-color: #585858;
             transition: filter 0.3s ease;
         }
         button:hover {
             filter: brightness(1.2);
         }
+        .btn-back {
+            width: 250px;
+            height: 80px;
+            background-image: url('png/back.png');
+        }
+        /*startpage*/
         .btnstart{
-            width: 250px; /* adjust as needed */
+            width: 250px;
             height: 80px;
             background-image: url('png/enter.png');
         }
         .btnsettings{
-            width: 250px; /* adjust as needed */
+            width: 250px;
             height: 80px;
             background-image: url('png/settings.png');
         }
-        .btn-yt{
-            width: 250px; /* adjust as needed */
-            height: 80px;
-            background-image: url('png/yt.png');
-        }
-        .btn-x{
-            width: 250px; /* adjust as needed */
-            height: 80px;
-            background-image: url('png/xcom.png');
-        }
-        .btn-git{
-            width: 250px; /* adjust as needed */
-            height: 80px;
-            background-image: url('png/github.png');
-        }
-        .btn-twitch{
-            width: 250px; /* adjust as needed */
-            height: 80px;
-            background-image: url('png/twitch.png');
-        }
-        .btn-reddit{
-            width: 250px; /* adjust as needed */
-            height: 80px;
-            background-image: url('png/reddit.png');
-        }
-        .btn-back {
-            width: 250px; /* adjust as needed */
-            height: 80px;
-            background-image: url('png/back.png');
-        }
+        /*homepage*/
         .btn-info {
-            width: 250px; /* adjust as needed */
+            width: 250px; 
             height: 80px;
             background-image: url('png/info.png');
         }
@@ -75,10 +56,37 @@
             background-image: url('png/minecraft.png');
         }
         .btn-project {
-            width: 250px; /* adjust as needed */
+            width: 250px;
             height: 80px;
             background-image: url('png/project.png');
         }
+        /*infopage*/
+        .btn-yt{
+            width: 250px;
+            height: 80px;
+            background-image: url('png/yt.png');
+        }
+        .btn-x{
+            width: 250px;
+            height: 80px;
+            background-image: url('png/xcom.png');
+        }
+        .btn-git{
+            width: 250px;
+            height: 80px;
+            background-image: url('png/github.png');
+        }
+        .btn-twitch{
+            width: 250px;
+            height: 80px;
+            background-image: url('png/twitch.png');
+        }
+        .btn-reddit{
+            width: 250px;
+            height: 80px;
+            background-image: url('png/reddit.png');
+        }
+        /*download*/
         .btn-lean{
             width: 400px;
             height: 100px;
@@ -89,17 +97,24 @@
             height: 100px;
             background-image: url('png/RTXTPVPdownload.png');
         }
+        /*projects*/
+        .btn-faiig{
+            width: 400px;
+            height: 100px;
+            background-image: url('png/faiig.png');
+        }
+        /*otherstuff*/
+        #mainsplash {
+            position: relative;
+            top: 50px;
+            right: -250px;
+            transform: rotate(20deg);
+            animation: grow-shrink 1.5s infinite;
+        }
         @keyframes grow-shrink {
             0% { transform: scale(1) rotate(20deg); }
             50% { transform: scale(1.1) rotate(20deg); }
             100% { transform: scale(1) rotate(20deg); }
-        }
-        #mainsplash {
-            position: fixed;
-            top: 50px;
-            right: 200px;
-            transform: rotate(20deg);
-            animation: grow-shrink 1.5s infinite;
         }
         input[type="checkbox"].btn-settings {
             appearance: none;
