@@ -7,15 +7,34 @@
         #startpg, #homepg, #info, #minecraft, #projects, #settingspg {
             display: none;
             text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         #startpg{
             font-size: 2em;
+            background-image: url('png/bg.png');
+        }
+        #homepg{
+            background-image: url('png/bg.png');
         }
         #startpg.active, #homepg.active, #info.active, #minecraft.active, #projects.active ,#settingspg.active{
             display: block;
         }
         #bigtxt{
             font-size: 2em;
+        }
+        #page-wrapper {
+            width: 100%; /* Or whatever width you want */
+            height: 0;
+            padding-bottom: 75%; /* This will give you a 4:3 aspect ratio */
+            position: relative;
+            overflow: auto;
         }
         /* Button*/
         button {

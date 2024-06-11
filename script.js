@@ -10,3 +10,7 @@ function switchPage(pageToShow) {
         }   
     });
 }
+window.addEventListener('resize', function() {
+    var width = document.getElementById('page-wrapper').offsetWidth;
+    document.getElementById('page-wrapper').style.height = (width * 0.75) + 'px'; /* Adjust 0.75 to change the aspect ratio */
+});
