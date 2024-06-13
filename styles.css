@@ -23,6 +23,9 @@
         #homepg{
             background-image: url('png/bg.png');
         }
+        #minecraft{
+            background-image: url('png/mcbg.png')
+        }
         #startpg.active, #homepg.active, #info.active, #minecraft.active, #projects.active ,#settingspg.active{
             display: block;
         }
@@ -30,9 +33,9 @@
             font-size: 2em;
         }
         #page-wrapper {
-            width: 100%; /* Or whatever width you want */
+            width: 100%; 
             height: 0;
-            padding-bottom: 75%; /* This will give you a 4:3 aspect ratio */
+            padding-bottom: 80%;
             position: relative;
             overflow: auto;
         }
@@ -137,11 +140,11 @@
         }
         input[type="checkbox"].btn-settings {
             appearance: none;
-            background-color: #f00; /* Change to match your button color */
+            background-color: #f00;
             width: 20px;
             height: 20px;
             cursor: pointer;
         }
         input[type="checkbox"].btn-settings:checked {
-            background-color: #0f0; /* Change to desired checked color */
+            background-color: #0f0;
         }
