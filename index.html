@@ -13,25 +13,8 @@
     });
     if (isChecked) {
         switchPage('homepg');
-    }   
-    var hueCycleCb = document.getElementById('hueCycleCb');
-    var isHueCycleEnabled = localStorage.getItem('hueCycleState') === 'true';
-    hueCycleCb.checked = isHueCycleEnabled;
-
-    if (isHueCycleEnabled) {
-        document.documentElement.classList.add('hue-cycle');
-    }
-
-    hueCycleCb.addEventListener('change', function() {
-        localStorage.setItem('hueCycleState', this.checked);
-
-        if (this.checked) {
-            document.documentElement.classList.add('hue-cycle');
-        } else {
-            document.documentElement.classList.remove('hue-cycle');
-        }
-    });
-        var words = ['Comic Sans Enjoyer', 'Splatoon Addict', 'Lunar was here','Average Balls Enjoyer', 'Insert Splash Text Here', 'A sigma is the guy from Overwatch'];
+    } 
+        var words = ['Comic Sans Enjoyer', 'Splatoon Addict', 'Lunar was here','Average Balls Enjoyer', 'Insert Splash Text Here', 'Sigma is the guy from Overwatch','waiting for the star wand to come back','includes AI'];
         var randomWord = words[Math.floor(Math.random() * words.length)];
         document.getElementById('splashtext').textContent = randomWord;
     };
@@ -54,13 +37,13 @@
         <!-- <input type="checkbox" id="toggle-hue"><p></p> -->
         <button class="btn-back" onclick="switchPage('homepg');"></button>
     </div>
-
     <div id="homepg">
         <p id="bigtxt">home page</p>
         <button class="btn-info" onclick="switchPage('info');"></button><p></p>
         <button class="btn-project" onclick="switchPage('projects');"></button><p></p>
         <button class="btn-mc" onclick="switchPage('minecraft');"></button><p></p>
-        <button class="btnsettings" onclick="switchPage('settingspg');">
+        <button class="btnsettings" onclick="switchPage('settingspg');"></button><p></p>
+        <button class="btn-credits" onclick="switchPage('credits');"></button>
     </div>
     <div id="info">
         <h2 id="bigtxt">Info</h2>
@@ -95,7 +78,7 @@
     <div id="credits">
         <h2 id="bigtxt">Credits</h2>
         <p id="bigtxt"></p>
-        <p id="bigtxt">AI and me adn random stuff from google</p>
+        <p id="bigtxt">AI and me and random stuff from google</p>
         <p id="bigtxt"></p>
         <button class="btn-back" onclick="switchPage('homepg');"></button>
     </div>

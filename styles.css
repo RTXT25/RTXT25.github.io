@@ -35,6 +35,10 @@
             color: black;
             background-image: url('png/projectbg.png')
         }
+        #settingspg{
+            color:black;
+            background-image: url('png/settingsbg.png')
+        }
         #startpg.active, #homepg.active, #info.active, #minecraft.active, #projects.active ,#settingspg.active, #credits.active{
             display: block;
         }
@@ -91,7 +95,11 @@
             height: 80px;
             background-image: url('png/project.png');
         }
-
+        .btn-credits {
+            width: 150px;
+            height: 40px;
+            background-image: url('png/credits.png');
+        }
         /*infopage*/
         .btn-yt{
             width: 250px;
@@ -147,17 +155,6 @@
             0% { transform: scale(1) rotate(20deg); }
             50% { transform: scale(1.1) rotate(20deg); }
             100% { transform: scale(1) rotate(20deg); }
-        }
-        @keyframes hue-rot {
-            from {
-                filter: hue-rotate(0deg);
-            }
-            to {
-                    filter: hue-rotate(360deg);
-            }
-        }
-        .hue-cycle {
-            animation: hue-rot 2s infinite linear;
         }
         input[type="checkbox"].btn-settings {
             appearance: none;
