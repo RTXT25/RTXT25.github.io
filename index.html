@@ -2,8 +2,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js"></script>
-    <script>window.onload = function() {
-        var checkbox = document.getElementById('skipstartcb');
+    <script>
+    window.onload = function() {
+    var checkbox = document.getElementById('skipstartcb');
     var isChecked = localStorage.getItem('checkboxState') === 'true';
     checkbox.checked = isChecked;
 
@@ -13,10 +14,28 @@
     if (isChecked) {
         switchPage('homepg');
     }   
-        var words = ['Comic Sans Enjoyer', 'Splatoon Addict', 'Lunar was here','Average Balls Enjoyer', 'Insert Splash Text Here'];
+    var hueCycleCb = document.getElementById('hueCycleCb');
+    var isHueCycleEnabled = localStorage.getItem('hueCycleState') === 'true';
+    hueCycleCb.checked = isHueCycleEnabled;
+
+    if (isHueCycleEnabled) {
+        document.documentElement.classList.add('hue-cycle');
+    }
+
+    hueCycleCb.addEventListener('change', function() {
+        localStorage.setItem('hueCycleState', this.checked);
+
+        if (this.checked) {
+            document.documentElement.classList.add('hue-cycle');
+        } else {
+            document.documentElement.classList.remove('hue-cycle');
+        }
+    });
+        var words = ['Comic Sans Enjoyer', 'Splatoon Addict', 'Lunar was here','Average Balls Enjoyer', 'Insert Splash Text Here', 'A sigma is the guy from Overwatch'];
         var randomWord = words[Math.floor(Math.random() * words.length)];
         document.getElementById('splashtext').textContent = randomWord;
-    };</script>
+    };
+    </script>
 </head>
 <div>
 <body>
@@ -31,6 +50,8 @@
         <h1 id="bigtxt">Setting</h1>
         <input type="checkbox" id="skipstartcb" class="btn-settings">
         <label id="bigtxt" for="skipstartcb">Skip Start Page</label><p>
+        <!-- <label for="toggle-hue">Toggle Hue Rotation</label> -->
+        <!-- <input type="checkbox" id="toggle-hue"><p></p> -->
         <button class="btn-back" onclick="switchPage('homepg');"></button>
     </div>
 
@@ -70,6 +91,13 @@
         <p>i make thing sometimes</p>
         <button class="btn-faiig" onclick="window.open('https://rtxt25.github.io/FAIIG/', '_blank');"></button>
         <p></p><button class="btn-back" onclick="switchPage('homepg');"></button>
+    </div>
+    <div id="credits">
+        <h2 id="bigtxt">Credits</h2>
+        <p id="bigtxt"></p>
+        <p id="bigtxt">AI and me adn random stuff from google</p>
+        <p id="bigtxt"></p>
+        <button class="btn-back" onclick="switchPage('homepg');"></button>
     </div>
 </body>
 </div>

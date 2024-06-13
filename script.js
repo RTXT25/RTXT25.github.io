@@ -1,6 +1,6 @@
 
 function switchPage(pageToShow) {
-    var pages = ['startpg', 'homepg', 'info', 'minecraft', 'projects', 'settingspg'];
+    var pages = ['startpg', 'homepg', 'info', 'minecraft', 'projects', 'settingspg', 'credits'];
     pages.forEach(function(pageId) {
         var page = document.getElementById(pageId);
         if (pageId === pageToShow) {
